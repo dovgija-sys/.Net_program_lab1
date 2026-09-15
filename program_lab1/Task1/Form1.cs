@@ -6,7 +6,6 @@ namespace program_lab1
         {
             InitializeComponent();
         }
-
         private void Calculate_button_Click(object sender, EventArgs e)
         {
             ClassForСalculations classForСalculations = new();
