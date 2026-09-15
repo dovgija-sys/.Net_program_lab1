@@ -1,8 +1,10 @@
+using program_lab1.Task2;
+
 namespace program_lab1
 {
-    public partial class Form1 : Form
+    public partial class CalculatingForm : Form
     {
-        public Form1()
+        public CalculatingForm()
         {
             InitializeComponent();
         }
@@ -20,10 +22,27 @@ namespace program_lab1
             classForСalculations.Tab(xn, xK, h, a);
             for (int i = 0; i < classForСalculations.n; i++)
             {
-                dataGridView.Rows.Add(Math.Round(classForСalculations.xy[i,0], 2).ToString(),
-                    Math.Round(classForСalculations.xy[i,1], 3).ToString());
+                dataGridView.Rows.Add(Math.Round(classForСalculations.xy[i, 0], 2).ToString(),
+                    Math.Round(classForСalculations.xy[i, 1], 3).ToString());
                 chart.Series[0].Points.AddXY(classForСalculations.xy[i, 0], classForСalculations.xy[i, 1]);
             }
+        }
+
+        private void CalculatingForm_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void одновимірніМасивиToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new();
+            form1.Show();
+            this.Hide();
+        }
+        private void двовимірніМасивиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new();
+            form2.Show();
+            this.Hide();
         }
     }
 }

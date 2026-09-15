@@ -1,6 +1,6 @@
 ﻿namespace program_lab1
 {
-    partial class Form1
+    partial class CalculatingForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             Xn_label = new Label();
             Xk_label = new Label();
             h_label = new Label();
@@ -44,8 +44,13 @@
             y = new DataGridViewTextBoxColumn();
             chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             Calculate_button = new Button();
+            menuStrip1 = new MenuStrip();
+            одновимірніМасивиToolStripMenuItem = new ToolStripMenuItem();
+            одновимірніМасивиToolStripMenuItem1 = new ToolStripMenuItem();
+            двовимірніМасивиToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // Xn_label
@@ -140,18 +145,18 @@
             // 
             // chart
             // 
-            chartArea2.Name = "ChartArea1";
-            chart.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            chart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            chart.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            chart.Legends.Add(legend1);
             chart.Location = new Point(380, 132);
             chart.Name = "chart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart.Series.Add(series1);
             chart.Size = new Size(824, 306);
             chart.TabIndex = 9;
             chart.Text = "chart";
@@ -166,7 +171,38 @@
             Calculate_button.UseVisualStyleBackColor = true;
             Calculate_button.Click += Calculate_button_Click;
             // 
-            // Form1
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { одновимірніМасивиToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1244, 28);
+            menuStrip1.TabIndex = 11;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // одновимірніМасивиToolStripMenuItem
+            // 
+            одновимірніМасивиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { одновимірніМасивиToolStripMenuItem1, двовимірніМасивиToolStripMenuItem });
+            одновимірніМасивиToolStripMenuItem.Name = "одновимірніМасивиToolStripMenuItem";
+            одновимірніМасивиToolStripMenuItem.Size = new Size(158, 24);
+            одновимірніМасивиToolStripMenuItem.Text = "Робота з масивами";
+            // 
+            // одновимірніМасивиToolStripMenuItem1
+            // 
+            одновимірніМасивиToolStripMenuItem1.Name = "одновимірніМасивиToolStripMenuItem1";
+            одновимірніМасивиToolStripMenuItem1.Size = new Size(239, 26);
+            одновимірніМасивиToolStripMenuItem1.Text = "Одновимірні масиви";
+            одновимірніМасивиToolStripMenuItem1.Click += одновимірніМасивиToolStripMenuItem1_Click;
+            // 
+            // двовимірніМасивиToolStripMenuItem
+            // 
+            двовимірніМасивиToolStripMenuItem.Name = "двовимірніМасивиToolStripMenuItem";
+            двовимірніМасивиToolStripMenuItem.Size = new Size(239, 26);
+            двовимірніМасивиToolStripMenuItem.Text = "Двовимірні масиви";
+            двовимірніМасивиToolStripMenuItem.Click += двовимірніМасивиToolStripMenuItem_Click;
+            // 
+            // CalculatingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -182,10 +218,15 @@
             Controls.Add(h_label);
             Controls.Add(Xk_label);
             Controls.Add(Xn_label);
-            Name = "Form1";
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "CalculatingForm";
             Text = "Form1";
+            Load += CalculatingForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,5 +246,9 @@
         private DataGridViewTextBoxColumn y;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private Button Calculate_button;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem одновимірніМасивиToolStripMenuItem;
+        private ToolStripMenuItem одновимірніМасивиToolStripMenuItem1;
+        private ToolStripMenuItem двовимірніМасивиToolStripMenuItem;
     }
 }
