@@ -6,6 +6,40 @@
         private int _Xlength = 3;
         private int _Ylength = 3;
         public int[,] B;
+        
+        public Array2(int xLength, int yLength)
+        {
+            Xlength = xLength;  
+            Ylength = yLength;
+            B = new int[_Xlength, _Ylength];
+            FillArray(-10, 11);
+        }
+        public void FillArray(int min, int max)
+        {
+            Random rand = new();
+            for (int i = 0; i < _Xlength; i++)
+            {
+                for (int j = 0; j < _Ylength; j++)
+                {
+                    B[i, j] = rand.Next(min, max);
+                }
+            }
+        }
+        public int Count()
+        {
+            int count = 0;
+            for (int i = 0; i < _Xlength; i++)
+            {
+                for (int j = i+1; j < _Ylength; j++)
+                {
+                    if (B[i, j] > 0)
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
         public int Xlength
         {
             get { return _Xlength; }
@@ -64,40 +98,6 @@
                 }
             }
 
-        }
-        public Array2(int xLength, int yLength)
-        {
-            Xlength = xLength;
-            Ylength = yLength;
-            B = new int[_Xlength, _Ylength];
-            FillArray(-10, 11);
-        }
-
-        public void FillArray(int min, int max)
-        {
-            Random rand = new();
-            for (int i = 0; i < _Xlength; i++)
-            {
-                for (int j = 0; j < _Ylength; j++)
-                {
-                    B[i, j] = rand.Next(min, max);
-                }
-            }
-        }
-        public int Count()
-        {
-            int count = 0;
-            for (int i = 0; i < _Xlength; i++)
-            {
-                for (int j = i+1; j < _Ylength; j++)
-                {
-                    if (B[i, j] > 0)
-                    {
-                        count++;
-                    }
-                }
-            }
-            return count;
         }
     }
 }

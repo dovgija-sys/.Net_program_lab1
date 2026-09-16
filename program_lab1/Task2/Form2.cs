@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace program_lab1.Task2
+﻿namespace program_lab1.Task2
 {
     public partial class Form2 : Form
     {

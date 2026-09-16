@@ -1,8 +1,4 @@
-﻿using System.ComponentModel;
-using System.Diagnostics.Eventing.Reader;
-using System.Security.Principal;
-
-namespace program_lab1.Task2
+﻿namespace program_lab1.Task2
 
 {
     public class Array1
@@ -10,35 +6,6 @@ namespace program_lab1.Task2
         public bool error = false;
         private int length = 10;
         public WindRecord[] A;
-        public int Length { get { return length; } set { length = value; } }
-        public WindRecord this[int index]
-        {
-            get
-            {
-                if (index < 0 || index >= length)
-                {
-                    error = true;
-                    return null;
-                }
-                else
-                {
-                    error = false;
-                    return A[index];
-                }
-            }
-            set
-            {
-                if (index < 0 || index >= length)
-                {
-                    error = true;
-                }
-                else
-                {
-                    error = false;
-                    A[index] = value;
-                }
-            }
-        }
         public Array1()
         {
             A = new WindRecord[length];
@@ -74,6 +41,35 @@ namespace program_lab1.Task2
                 }
             }
             return count;
+        }
+        public int Length { get { return length; } set { length = value; } }
+        public WindRecord this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= length)
+                {
+                    error = true;
+                    return null;
+                }
+                else
+                {
+                    error = false;
+                    return A[index];
+                }
+            }
+            set
+            {
+                if (index < 0 || index >= length)
+                {
+                    error = true;
+                }
+                else
+                {
+                    error = false;
+                    A[index] = value;
+                }
+            }
         }
     }
 }
